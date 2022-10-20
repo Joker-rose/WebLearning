@@ -1,0 +1,11 @@
+$btnWidth: 50px;
+$btnHeight: 20px;
+.Button {
+    width: $btnWidth;
+    height: $btnHeight;
+    font-size: 14px;
+    color: #333;
+    background-color: #ccc;
+    padding: 20px;
+    border-radius: 5px;
+}

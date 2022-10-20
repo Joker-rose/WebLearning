@@ -2,14 +2,21 @@
 
 
 ## 项目构建
+
 ### 1、创建新的单页应用
 *方式一* 
 ```npm
+    // 1
     npm init react-app my-react-app
+	
+    // 2
+    npm install -g create-react-app
+    create-react-app my-react-app
 ```
 *方式二* 
 ```npx
-    npx create-react-app my-react-app // npm install -g create-react-app; create-react-app my-react-app;
+    // npx create-react-app my-app --template [template-name]
+    npx create-react-app my-react-app 
     cd my-react-app
     npm start
 ```
@@ -30,6 +37,72 @@
 ```
 
 > ### 组件库或将 React 集成到现有代码 (待完善)
+
+
+
+
+### 添加 Sass 样式表
+- [x] 项目内执行 npm install --save-dev sass
+- [x] 新建 [scss/sass/css] 样式表，引入使用
+
+### CSS 样式重置 [使所有浏览器样式看起来统一]
+- [x] 在 index.css（主样式）中添加 @import-normalize; 添加一次即可
+
+# 添加 bootstrap
+- [x] 项目内执行 npm install --save bootstrap
+- [x] 在 index.css（主样式）中添加 import 'bootstrap/dist/css/bootstrap.css';
+	- [ ]  自定义主题样式，创建 src/custom.scss
+	- [ ]  custom.scss 中覆盖 bootstrap.scss 中的变量 (如：$body-bg: #000;)
+	- [ ] 覆盖变量后，添加 @import '~bootstrap/scss/bootstrap.scss';
+
+### 添加路由依赖
+- [x] 项目内执行 npm install --save react-router-dom
+- [x] 使用路由
+	- [ ] import { createBrowserRouter, RouterProvider } from "react-router-dom";
+	- [ ] 创建 router.js
+	``` qwe
+	    import Component1 from "./Component1";...
+		
+	    const router = createBrowserRouter([
+            {
+                path: "/",
+                element: <Component1 />,
+            },
+            {
+                path: "about",
+                element: <Component1 />,
+            },
+        ]);
+	```
+	- [ ] 在 index.js 中向ReactDOM添加路由
+	``` qwe
+	    import React from "react";
+	    import ReactDOM from "react-dom/client";
+		
+	    const root = ReactDOM.createRoot(document.getElementById("root"));
+	    root.render(<RouterProvider router={router} />);
+	```
+	- [ ]
+	- [ ]
+	- [ ]
+	- [ ]
+
+### Flow 静态类型检查器
+- [x] 项目内执行 npm install --save-dev flow-bin
+- [x] 在 package.json 中 "scripts" 脚本中添加 "flow": "flow"
+- [x] 在项目根目录执行 npm run flow init 以创建 .flowconfig 文件
+- [x] 在要检查的文件中添加 "// @flow" 行表示该文件要检查
+
+
+### graphql 和 Relay 相关
+- [x] 暂未了解
+
+### Visual Studio Code 格式化 JSX 文件支持
+- [x] vscode安装 Prettier - Code formatter 插件
+- [x] 设置vscode，文本编辑器->文件，files.associations 添加 "*.js": "javascriptreact" 或者 "*.jsx": "javascriptreact"
+
+
+
 
 
 
@@ -200,8 +273,9 @@ function test() {
 
 - [x] GFM task list 1
 - [x] GFM task list 2
-- [ ] GFM task list 3
+- [x] GFM task list 3
     - [ ] GFM task list 3-1
+		- [ ] GFM task list 3-1
     - [ ] GFM task list 3-2
     - [ ] GFM task list 3-3
 - [ ] GFM task list 4
