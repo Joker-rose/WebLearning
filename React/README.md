@@ -82,10 +82,6 @@
 	    const root = ReactDOM.createRoot(document.getElementById("root"));
 	    root.render(<RouterProvider router={router} />);
 	```
-	- [ ]
-	- [ ]
-	- [ ]
-	- [ ]
 
 ### Flow 静态类型检查器
 - [x] 项目内执行 npm install --save-dev flow-bin
