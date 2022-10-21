@@ -1,7 +1,6 @@
-import logo from "logo.svg";  // 图片等静态资源
-import { ReactComponent as Logo  } from "logo.svg";  // 将svg作为组件导入
-import Button from '../Button/Button';
-import "./App.css"; 
+import logo from "logo.svg"; // 图片等静态资源
+import Button from "../Button/Button";
+import "./App.css";
 
 function App() {
   return (
@@ -11,7 +10,6 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        {/* className="App-link" */}
         <a
           href="https://reactjs.org"
           className="App-link"
@@ -21,7 +19,6 @@ function App() {
           Learn React
         </a>
         <Button />
-        <Logo className="App-logo"/>
       </header>
     </div>
   );

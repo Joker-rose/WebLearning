@@ -83,12 +83,27 @@
 	    root.render(<RouterProvider router={router} />);
 	```
 
+### 添加环境变量
+- [x] 项目根目录添加 .env.[development/production].[local]
+- [x] development/production 为模式名称，可自定义名字[需设置 NODE_ENV=development/production]，如：.env.staging
+	- [ ] package.json文件的scripts节点添加  "build:staging": "env-cmd -f .env.staging npm run build"
+- [x] 添加变量名以 REACT_APP_ 开头，区别于系统等其他定义的变量，只有 NODE_ENV、REACT_APP_开头 的变量不会被忽略
+- [x] js中用 process.env.NODE_ENV，HTML中使用 %NODE_ENV% ;
+- [x] 使用系统等环境变量：如：npm_package_version -> REACT_APP_VERSION=$npm_package_version
+- [x] 优先级;从左到右依次从高到低
+	- [ ] npm run start: .env.development.local, .env.local, .env.development, .env, 
+	- [ ] npm run build: .env.production.local, .env.local, .env.production, .env
+	- [ ] npm run test: .env.test.local, .env.test, .env, .env.local
+
+
+### 配置打包生成的基本路径
+- [x] 设置环境变量 PUBLIC_URL='/'; 或 package.json文件添加 "homepage": "/" ; "/" 为打包后的文件路径的前缀
+
 ### Flow 静态类型检查器
 - [x] 项目内执行 npm install --save-dev flow-bin
 - [x] 在 package.json 中 "scripts" 脚本中添加 "flow": "flow"
 - [x] 在项目根目录执行 npm run flow init 以创建 .flowconfig 文件
 - [x] 在要检查的文件中添加 "// @flow" 行表示该文件要检查
-
 
 ### graphql 和 Relay 相关
 - [x] 暂未了解
