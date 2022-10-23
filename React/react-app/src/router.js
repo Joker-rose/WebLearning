@@ -6,6 +6,7 @@ import About from "./pages/About";
 import Main from "./pages/main/Main";
 import Module1 from "./pages/main/modules/Module1";
 import Module2 from "./pages/main/modules/Module2";
+import Game from "./pages/game/Game";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
         errorElement: <Error />,
       },
     ],
+  },
+  {
+    path: "game",
+    element: <Game />,
+    errorElement: <Error />,
   },
 ]);
 

@@ -11,6 +11,9 @@ function Menu() {
         <li>
           <a href={`/about`}>about</a>
         </li>
+        <li>
+          <a href={`/game`}>game</a>
+        </li>
       </ul>
     </nav>
   );
